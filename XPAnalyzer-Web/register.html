@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>XP Analyzer - Registro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>Crear cuenta</h1>
+
+    <label>Usuario</label>
+    <input type="text" id="user">
+
+    <label>Contraseña</label>
+    <input type="password" id="pass">
+
+    <button onclick="register()">Registrar</button>
+
+    <p class="msg" id="msg"></p>
+
+    <a href="login.html">Ya tengo cuenta</a>
+  </div>
+
+  <script>
+    function register() {
+      const user = document.getElementById('user').value.trim();
+      const pass = document.getElementById('pass').value.trim();
+      const msg = document.getElementById('msg');
+
+      if (!user || !pass) {
+        msg.textContent = "Completa todos los campos.";
+        return;
+      }
+
+      if (localStorage.getItem(user)) {
+        msg.textContent = "Ese usuario ya existe.";
+        return;
+      }
+
+      localStorage.setItem(user, pass);
+      msg.textContent = "Cuenta creada. Ahora inicia sesión.";
+    }
+  </script>
+</body>
+</html>
