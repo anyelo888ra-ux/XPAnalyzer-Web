@@ -21,11 +21,14 @@ El objetivo del proyecto es crear un sitio simple y funcional que sirva como:
 ## 📁 Estructura del proyecto
 
 XPAnalyzer-Web/
-├── index.html
-├── login.html
-├── register.html
-├── style.css
-└── /assets
+ ├── index.html
+ ├── login.html
+ ├── register.html
+ ├── style.css
+ ├── README.md
+ └── assets/
+       ├── icon.png
+       └── banner.png
 
 
 ---
