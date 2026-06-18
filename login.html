@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>XP Analyzer - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>XP Analyzer Login</h1>
+
+    <label>Usuario</label>
+    <input type="text" id="user">
+
+    <label>Contraseña</label>
+    <input type="password" id="pass">
+
+    <button onclick="login()">Iniciar sesión</button>
+
+    <a id="download" class="download" href="XPAnalyzer.wsb" download>Descargar Sandbox</a>
+
+    <p class="msg" id="msg"></p>
+
+    <a href="register.html">Crear cuenta</a>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById('user').value.trim();
+      const pass = document.getElementById('pass').value.trim();
+      const msg = document.getElementById('msg');
+      const download = document.getElementById('download');
+
+      const savedPass = localStorage.getItem(user);
+
+      if (savedPass && savedPass === pass) {
+        msg.textContent = "Login correcto. Descarga habilitada.";
+        download.style.display = "block";
+      } else {
+        msg.textContent = "Usuario o contraseña incorrectos.";
+        download.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

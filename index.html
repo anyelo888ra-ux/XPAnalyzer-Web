@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>XP Analyzer - Login</title>
+  <style>
+    body {
+      background: #0b0c10;
+      color: #c5c6c7;
+      font-family: Consolas, monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background: #1f2833;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #000;
+      width: 320px;
+    }
+    h1 {
+      font-size: 20px;
+      color: #66fcf1;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+    input {
+      width: 100%;
+      padding: 6px 8px;
+      margin-top: 4px;
+      border-radius: 4px;
+      border: none;
+      background: #0b0c10;
+      color: #c5c6c7;
+    }
+    button, a.download {
+      margin-top: 12px;
+      width: 100%;
+      padding: 8px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+    button {
+      background: #45a29e;
+      color: #0b0c10;
+    }
+    a.download {
+      background: #66fcf1;
+      color: #0b0c10;
+      display: none;
+    }
+    .msg {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #c5c6c7;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>XP Analyzer Login</h1>
+    <label>Usuario</label>
+    <input type="text" id="user">
+    <label>Contraseña</label>
+    <input type="password" id="pass">
+    <button id="loginBtn">Iniciar sesión</button>
+    <a href="XPAnalyzer.wsb" class="download" id="downloadLink" download>Download Sandbox (.wsb)</a>
+    <div class="msg" id="msg"></div>
+  </div>
+
+  <script>
+    const loginBtn = document.getElementById('loginBtn');
+    const downloadLink = document.getElementById('downloadLink');
+    const msg = document.getElementById('msg');
+
+    loginBtn.addEventListener('click', () => {
+      const user = document.getElementById('user').value.trim();
+      const pass = document.getElementById('pass').value.trim();
+
+      // Login súper simple (puedes cambiar user/pass)
+      if (user === 'admin' && pass === 'xp123') {
+        msg.textContent = 'Login correcto. Descarga habilitada.';
+        downloadLink.style.display = 'inline-block';
+      } else {
+        msg.textContent = 'Usuario o contraseña incorrectos.';
+        downloadLink.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
