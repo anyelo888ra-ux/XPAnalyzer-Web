@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="XPAnalyzer-Web/icon.png" width="120">
+</p>
+
 # XPAnalyzer Web Portal
 
 Este es el portal web oficial del proyecto **XPAnalyzer**, que incluye:
